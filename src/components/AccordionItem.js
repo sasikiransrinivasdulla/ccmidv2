@@ -5,6 +5,20 @@ import React, { useState } from 'react';
 export default function AccordionItem({ id, topic }) {
   const [isOpen, setIsOpen] = useState(false);
 
+  const handleYoutubeSearch = () => {
+    window.open(
+      `https://www.youtube.com/results?search_query=cloud computing ${topic.title} telugu`,
+      "_blank"
+    );
+  };
+
+  const handleDiagramSearch = () => {
+    window.open(
+      `https://www.google.com/search?tbm=isch&q=cloud computing ${topic.title} diagram`,
+      "_blank"
+    );
+  };
+
   return (
     <div className={`mb-4 overflow-hidden rounded-2xl transition-all duration-300 ${isOpen ? 'glass-hover' : 'glass'}`}>
       <button
@@ -37,13 +51,13 @@ export default function AccordionItem({ id, topic }) {
         className={`grid transition-all duration-300 ease-in-out ${isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`}
       >
         <div className="overflow-hidden">
-          <div className="p-6 pt-0 border-t border-white/5 space-y-4">
-            <p className="text-white/70 leading-relaxed italic">
+          <div className="p-6 pt-0 border-t border-white/5 space-y-6">
+            <p className="text-white/70 leading-relaxed pt-4">
               {topic.description || "Placeholder description for this topic. Detailed concepts and explanations will be added here later."}
             </p>
             
             {topic.points && topic.points.length > 0 && (
-              <ul className="space-y-2">
+              <ul className="space-y-3">
                 {topic.points.map((point, index) => (
                   <li key={index} className="flex items-start gap-3 text-white/60">
                     <span className="text-aurora-blue mt-1">•</span>
@@ -58,6 +72,24 @@ export default function AccordionItem({ id, topic }) {
                 Key points and technical details will be structured here.
               </div>
             )}
+
+            {/* Search Buttons Container */}
+            <div className="flex flex-col sm:flex-row gap-4 pt-4 border-t border-white/5">
+              <button 
+                onClick={handleYoutubeSearch}
+                className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2 text-sm font-semibold rounded-xl glass hover:glass-hover border border-white/10 hover:border-red-500/30 transition-all duration-300 group"
+              >
+                <span className="group-hover:scale-110 transition-transform">🎥</span>
+                YouTube Search
+              </button>
+              <button 
+                onClick={handleDiagramSearch}
+                className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2 text-sm font-semibold rounded-xl glass hover:glass-hover border border-white/10 hover:border-aurora-cyan/30 transition-all duration-300 group"
+              >
+                <span className="group-hover:scale-110 transition-transform">🖼</span>
+                Diagram Search
+              </button>
+            </div>
           </div>
         </div>
       </div>
