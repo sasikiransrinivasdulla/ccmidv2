@@ -77,6 +77,7 @@ export default function UnitPage({ params }) {
               key={topic.id} 
               id={topic.id} 
               topic={topic} 
+              unitId={id}
             />
           ))}
         </div>
