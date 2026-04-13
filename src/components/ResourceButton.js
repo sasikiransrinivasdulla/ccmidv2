@@ -11,7 +11,7 @@ export default function ResourceButton({ href, icon, label, className = "" }) {
       rel="noopener noreferrer"
       className={`inline-flex items-center gap-2 transition-all duration-300 group ${
         isPremium 
-          ? `px-6 py-3 text-sm font-semibold text-black bg-white rounded-full hover:bg-gray-200 shadow-lg shadow-white/10 ${className}`
+          ? `px-6 py-3 text-sm font-semibold text-black bg-white rounded-full hover:bg-gray-200 shadow-lg shadow-white/20 ${className}`
           : `px-4 py-2 text-sm font-medium rounded-xl glass hover:glass-hover border border-white/5 hover:border-white/20 text-white/70 hover:text-white ${className}`
       }`}
     >

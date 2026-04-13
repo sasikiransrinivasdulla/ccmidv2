@@ -12,7 +12,7 @@ export default function UnitCard({ id, title, description }) {
             </span>
           </div>
           
-          <h3 className="text-2xl font-semibold text-white mb-4 group-hover:text-white transition-colors tracking-tight">
+          <h3 className="text-xl font-semibold text-white mb-4 group-hover:text-white transition-colors tracking-tight">
             {title}
           </h3>
           
@@ -20,8 +20,8 @@ export default function UnitCard({ id, title, description }) {
             {description}
           </p>
 
-          <div className="mt-auto flex items-center gap-2 text-white font-medium text-sm border-t border-white/5 pt-6 group-hover:border-white/10 transition-colors">
-            <span className="underline decoration-white/20 underline-offset-4 group-hover:decoration-white transition-all">
+          <div className="mt-auto flex items-center gap-2 text-white hover:text-gray-300 transition-colors font-medium text-sm border-t border-white/5 pt-6 group-hover:border-white/10">
+            <span className="underline decoration-white/20 underline-offset-4 group-hover:decoration-white/50 transition-all">
               Explore Unit
             </span>
             <svg 

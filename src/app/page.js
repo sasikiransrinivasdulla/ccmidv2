@@ -13,14 +13,14 @@ export default function Home() {
     <PageContainer>
       <div className="flex flex-col items-center text-center mb-24 space-y-6 relative pt-12">
         <div className="absolute top-0 right-0 hidden lg:block">
-          <ResourceButton 
-            href="/syllabus/cn.pdf" 
-            icon="📘" 
-            label="Full Syllabus" 
+          <ResourceButton
+            href="/syllabus/cn.pdf"
+            icon="📘"
+            label="Full Syllabus"
             className="bg-white"
           />
         </div>
-        
+
         <h2 className="text-white/40 font-bold tracking-[0.3em] uppercase text-xs">
           Academic Research Platform
         </h2>
@@ -28,15 +28,14 @@ export default function Home() {
           Cloud Computing <br /> Mastery
         </h1>
         <p className="max-w-2xl text-gray-400 text-lg md:text-xl font-medium leading-relaxed">
-          A minimalist curriculum for high-performance cloud architecture. 
-          Master the systems that power the modern web.
+          A minimal modern web.
         </p>
 
         <div className="pt-8">
-          <ResourceButton 
-            href="/syllabus/cn.pdf" 
-            icon="📘" 
-            label="Full Syllabus" 
+          <ResourceButton
+            href="/syllabus/cn.pdf"
+            icon="📘"
+            label="Full Syllabus"
             className="bg-white lg:hidden"
           />
         </div>
@@ -44,7 +43,7 @@ export default function Home() {
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {units.map((unit) => (
-          <UnitCard 
+          <UnitCard
             key={unit.id}
             id={unit.id}
             title={unit.title}
