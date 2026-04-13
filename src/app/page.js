@@ -45,6 +45,14 @@ export default function Home() {
             className="bg-white lg:hidden"
           />
         </div>
+
+        {/* Mobile Discoverability Arrow */}
+        <div className="lg:hidden absolute bottom-[-40px] left-1/2 transform -translate-x-1/2 animate-bounce flex flex-col items-center gap-1 opacity-40">
+          <span className="text-[10px] font-bold uppercase tracking-widest">Explore Units</span>
+          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+          </svg>
+        </div>
       </div>
 
       {/* Global Progress Section */}
