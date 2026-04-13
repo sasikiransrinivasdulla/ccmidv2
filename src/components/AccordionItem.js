@@ -26,18 +26,18 @@ export default function AccordionItem({ id, topic }) {
         className="w-full flex items-center justify-between p-6 text-left focus:outline-none"
       >
         <div className="flex items-center gap-4">
-          <div className={`w-2 h-2 rounded-full shadow-[0_0_8px_rgba(34,211,238,0.8)] ${topic.important ? 'bg-aurora-cyan' : 'bg-white/20 shadow-none'}`} />
-          <h4 className={`text-lg font-semibold transition-colors flex items-center gap-2 ${isOpen ? 'text-aurora-cyan' : 'text-white'}`}>
+          <div className={`w-2 h-2 rounded-full transition-all duration-300 ${topic.important ? 'bg-white shadow-[0_0_10px_rgba(255,255,255,0.5)]' : 'bg-white/20'}`} />
+          <h4 className={`text-lg font-semibold transition-colors flex items-center gap-2 ${isOpen ? 'text-white' : 'text-white/70'}`}>
             {topic.title}
             {topic.important && (
-              <span className="text-yellow-400 drop-shadow-[0_0_5px_rgba(250,204,21,0.5)]" title="Important Topic">
+              <span className="text-yellow-400/80 drop-shadow-[0_0_5px_rgba(250,204,21,0.3)]" title="Important Topic">
                 ⭐
               </span>
             )}
           </h4>
         </div>
         <svg
-          className={`w-6 h-6 transform transition-transform duration-300 ${isOpen ? 'rotate-180 text-aurora-cyan' : 'text-white/40'}`}
+          className={`w-6 h-6 transform transition-transform duration-300 ${isOpen ? 'rotate-180 text-white' : 'text-white/20'}`}
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -52,7 +52,7 @@ export default function AccordionItem({ id, topic }) {
       >
         <div className="overflow-hidden">
           <div className="p-6 pt-0 border-t border-white/5 space-y-6">
-            <p className="text-white/70 leading-relaxed pt-4">
+            <p className="text-gray-400 leading-relaxed pt-4">
               {topic.description || "Placeholder description for this topic. Detailed concepts and explanations will be added here later."}
             </p>
             
@@ -60,7 +60,7 @@ export default function AccordionItem({ id, topic }) {
               <ul className="space-y-3">
                 {topic.points.map((point, index) => (
                   <li key={index} className="flex items-start gap-3 text-white/60">
-                    <span className="text-aurora-blue mt-1">•</span>
+                    <span className="text-white/40 mt-1">•</span>
                     {point}
                   </li>
                 ))}
@@ -68,7 +68,7 @@ export default function AccordionItem({ id, topic }) {
             )}
 
             {!topic.points?.length && (
-              <div className="bg-white/5 rounded-xl p-4 text-sm text-white/40 border border-white/5">
+              <div className="bg-white/5 rounded-xl p-4 text-sm text-white/30 border border-white/5">
                 Key points and technical details will be structured here.
               </div>
             )}
@@ -77,14 +77,14 @@ export default function AccordionItem({ id, topic }) {
             <div className="flex flex-col sm:flex-row gap-4 pt-4 border-t border-white/5">
               <button 
                 onClick={handleYoutubeSearch}
-                className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2 text-sm font-semibold rounded-xl glass hover:glass-hover border border-white/10 hover:border-red-500/30 transition-all duration-300 group"
+                className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2 text-sm font-semibold rounded-xl glass hover:glass-hover border border-white/10 hover:border-white/30 transition-all duration-300 group"
               >
                 <span className="group-hover:scale-110 transition-transform">🎥</span>
                 YouTube Search
               </button>
               <button 
                 onClick={handleDiagramSearch}
-                className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2 text-sm font-semibold rounded-xl glass hover:glass-hover border border-white/10 hover:border-aurora-cyan/30 transition-all duration-300 group"
+                className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2 text-sm font-semibold rounded-xl glass hover:glass-hover border border-white/10 hover:border-white/30 transition-all duration-300 group"
               >
                 <span className="group-hover:scale-110 transition-transform">🖼</span>
                 Diagram Search

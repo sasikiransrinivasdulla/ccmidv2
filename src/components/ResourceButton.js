@@ -1,21 +1,28 @@
 import React from 'react';
 
 export default function ResourceButton({ href, icon, label, className = "" }) {
+  // Check if it's the premium white variant
+  const isPremium = className.includes('bg-white');
+
   return (
     <a 
       href={href} 
       target="_blank" 
       rel="noopener noreferrer"
-      className={`inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold rounded-full glass hover:glass-hover border border-white/10 hover:border-aurora-cyan/30 transition-all duration-300 group shadow-[0_0_15px_-5px_rgba(0,0,0,0.3)] hover:shadow-[0_0_20px_-5px_rgba(14,165,233,0.3)] ${className}`}
+      className={`inline-flex items-center gap-2 transition-all duration-300 group ${
+        isPremium 
+          ? `px-6 py-3 text-sm font-semibold text-black bg-white rounded-full hover:bg-gray-200 shadow-lg shadow-white/10 ${className}`
+          : `px-4 py-2 text-sm font-medium rounded-xl glass hover:glass-hover border border-white/5 hover:border-white/20 text-white/70 hover:text-white ${className}`
+      }`}
     >
       <span className="text-base group-hover:scale-110 transition-transform duration-300">
         {icon}
       </span>
-      <span className="text-white/80 group-hover:text-white transition-colors">
+      <span>
         {label}
       </span>
       <svg 
-        className="w-4 h-4 text-white/40 group-hover:text-aurora-cyan transition-colors" 
+        className={`w-4 h-4 transition-colors ${isPremium ? 'text-black/40 group-hover:text-black' : 'text-white/20 group-hover:text-white'}`}
         fill="none" 
         stroke="currentColor" 
         viewBox="0 0 24 24"

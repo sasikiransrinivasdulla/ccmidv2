@@ -1,11 +1,5 @@
 @import "tailwindcss";
 
-@theme {
-  --color-aurora-blue: #0ea5e9;
-  --color-aurora-cyan: #22d3ee;
-  --color-aurora-purple: #8b5cf6;
-}
-
 @layer base {
   :root {
     --background: #000000;
@@ -25,33 +19,10 @@
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 }
 
 @utility glass-hover {
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(255, 255, 255, 0.15);
-  box-shadow: 0 8px 32px 0 rgba(14, 165, 233, 0.1);
-}
-
-@keyframes aurora-1 {
-  0% { transform: translate(0, 0) scale(1); }
-  33% { transform: translate(50px, -30px) scale(1.1); }
-  66% { transform: translate(-20px, 20px) scale(0.9); }
-  100% { transform: translate(0, 0) scale(1); }
-}
-
-@keyframes aurora-2 {
-  0% { transform: translate(0, 0) scale(1.1); }
-  33% { transform: translate(-40px, 40px) scale(0.9); }
-  66% { transform: translate(30px, -20px) scale(1); }
-  100% { transform: translate(0, 0) scale(1.1); }
-}
-
-@utility animate-aurora-1 {
-  animation: aurora-1 20s infinite ease-in-out;
-}
-
-@utility animate-aurora-2 {
-  animation: aurora-2 25s infinite ease-in-out;
+  box-shadow: 0 8px 32px 0 rgba(255, 255, 255, 0.05);
 }
