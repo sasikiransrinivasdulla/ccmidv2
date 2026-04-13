@@ -6,7 +6,8 @@ import ResourceButton from "@/components/ResourceButton";
 import { syllabus } from "@/data/syllabus";
 
 export default function UnitPage({ params }) {
-  const { id } = params;
+  // Next.js 15+ requires params to be awaited
+  const { id } = React.use(params);
   const unit = syllabus[id];
 
   if (!unit) {

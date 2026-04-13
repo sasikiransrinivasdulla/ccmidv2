@@ -1,21 +1,4 @@
 export const syllabus = {
-  1: {
-    title: "Foundations of Cloud",
-    description: "Introduction to cloud computing, service models (IaaS, PaaS, SaaS), and deployment models.",
-    topics: [
-      { id: "u1t1", title: "Introduction to Cloud Computing", description: "", points: [], important: true },
-      { id: "u1t2", title: "Service Models (IaaS, PaaS, SaaS)", description: "", points: [], important: true },
-      { id: "u1t3", title: "Deployment Models", description: "", points: [], important: false },
-    ]
-  },
-  2: {
-    title: "Virtualization & Infrastructure",
-    description: "Deep dive into hypervisors, containerization, and software-defined networking.",
-    topics: [
-      { id: "u2t1", title: "Hypervisor Technology", description: "", points: [], important: true },
-      { id: "u2t2", title: "Containerization Basics", description: "", points: [], important: true },
-    ]
-  },
   3: {
     title: "Virtualization and Containers",
     description: "Deep dive into virtualized environments and container orchestration platforms.",
@@ -362,18 +345,306 @@ export const syllabus = {
     title: "Advanced Concepts",
     description: "Exploring serverless patterns, IoT integration, and emerging cloud technologies.",
     topics: [
-      { id: "u5t1", title: "Serverless Computing", description: "", points: [], important: true },
-      { id: "u5t2", title: "Function-as-a-Service (FaaS)", description: "", points: [], important: false },
-      { id: "u5t3", title: "Serverless Architecture", description: "", points: [], important: true },
-      { id: "u5t4", title: "AWS Lambda", description: "", points: [], important: false },
-      { id: "u5t5", title: "OpenFaaS", description: "", points: [], important: true },
-      { id: "u5t6", title: "Internet of Things (IoT)", description: "", points: [], important: false },
-      { id: "u5t7", title: "IoT Applications", description: "", points: [], important: true },
-      { id: "u5t8", title: "Cloud-centric IoT and Layers", description: "", points: [], important: false },
-      { id: "u5t9", title: "Edge and Fog Computing", description: "", points: [], important: true },
-      { id: "u5t10", title: "DevOps", description: "", points: [], important: false },
-      { id: "u5t11", title: "Infrastructure-as-Code", description: "", points: [], important: true },
-      { id: "u5t12", title: "Quantum Cloud Computing", description: "", points: [], important: false },
+      {
+        id: "u5t1",
+        title: "Serverless Computing",
+        description: "Serverless computing is a cloud execution model where developers can build and run applications without managing servers. The cloud provider automatically handles infrastructure, scaling, and maintenance, allowing developers to focus only on writing code.",
+        points: [
+          "Eliminates need to manage servers or infrastructure",
+          "Automatically scales based on incoming requests",
+          "Follows event-driven execution model",
+          "Charges only for actual execution time (pay-per-use)",
+          "Reduces operational complexity for developers",
+          "Improves development speed and deployment efficiency",
+          "Suitable for microservices and lightweight applications"
+        ],
+        important: true
+      },
+      {
+        id: "u5t2",
+        title: "Components of Serverless Computing",
+        description: "Serverless computing is built using multiple components that work together to execute code efficiently. These components handle event triggering, execution, scaling, and monitoring.",
+        points: [
+          "Event triggers initiate function execution (e.g., HTTP request)",
+          "Function code contains business logic",
+          "Execution environment runs functions temporarily",
+          "API Gateway connects external requests to functions",
+          "Monitoring tools track performance and logs",
+          "Auto-scaling adjusts resources based on demand",
+          "Cloud provider manages all backend infrastructure"
+        ],
+        important: false
+      },
+      {
+        id: "u5t3",
+        title: "Advantages and Disadvantages of Serverless Computing",
+        description: "Serverless computing offers many benefits like cost efficiency and scalability, but it also comes with limitations such as vendor dependency and cold start delays.",
+        points: [
+          "No server management reduces operational effort",
+          "Highly scalable and automatically adjusts to load",
+          "Cost-efficient due to pay-per-execution model",
+          "Faster deployment and development cycle",
+          "Cold start latency can delay execution",
+          "Vendor lock-in limits flexibility",
+          "Limited control over underlying infrastructure"
+        ],
+        important: true
+      },
+      {
+        id: "u5t4",
+        title: "Function-as-a-Service (FaaS)",
+        description: "Function-as-a-Service (FaaS) is a core concept of serverless computing where individual functions are executed in response to events. Each function performs a specific task and runs independently.",
+        points: [
+          "Executes small pieces of code (functions) independently",
+          "Triggered by events like API calls or file uploads",
+          "Functions are stateless and short-lived",
+          "Automatically scales based on number of requests",
+          "Supports multiple programming languages",
+          "Reduces complexity by breaking applications into functions",
+          "Key building block of serverless architecture"
+        ],
+        important: false
+      },
+      {
+        id: "u5t5",
+        title: "FaaS Architecture",
+        description: "FaaS architecture is designed around event-driven execution where functions respond to triggers. It includes components like event sources, execution engines, and monitoring systems.",
+        points: [
+          "Event sources trigger function execution",
+          "Execution engine runs the function code",
+          "API Gateway manages incoming requests",
+          "Functions communicate with databases and storage",
+          "Monitoring tools track logs and performance",
+          "Auto-scaling handles varying workloads",
+          "Architecture is highly distributed and scalable"
+        ],
+        important: true
+      },
+      {
+        id: "u5t6",
+        title: "Serverless Architecture",
+        description: "Serverless architecture is a design approach where applications are built using cloud-managed services and functions instead of traditional servers. It enables modular and scalable system design.",
+        points: [
+          "Applications are divided into small independent functions",
+          "Uses cloud services like databases, storage, and APIs",
+          "No need to manage backend infrastructure",
+          "Highly scalable and flexible system design",
+          "Supports microservices architecture",
+          "Improves fault isolation and system reliability",
+          "Reduces development and operational overhead"
+        ],
+        important: false
+      },
+      {
+        id: "u5t7",
+        title: "AWS Lambda",
+        description: "AWS Lambda is a popular serverless computing service provided by Amazon Web Services. It allows users to run code without provisioning servers and automatically scales based on demand.",
+        points: [
+          "Executes code in response to events",
+          "Supports multiple languages like Python, Node.js, Java",
+          "Automatically scales based on traffic",
+          "Integrates with AWS services like S3, DynamoDB",
+          "Charges only for execution time",
+          "No server provisioning required",
+          "Widely used in real-world serverless applications"
+        ],
+        important: true
+      },
+      {
+        id: "u5t8",
+        title: "OpenFaaS",
+        description: "OpenFaaS is an open-source serverless platform that allows developers to run functions on their own infrastructure. It provides flexibility and avoids dependency on cloud providers.",
+        points: [
+          "Open-source alternative to cloud-based FaaS platforms",
+          "Can be deployed on Kubernetes or Docker",
+          "Gives full control over infrastructure",
+          "Supports multiple programming languages",
+          "Avoids vendor lock-in",
+          "Requires manual setup and maintenance",
+          "Suitable for private cloud environments"
+        ],
+        important: false
+      },
+      {
+        id: "u5t9",
+        title: "AWS Lambda vs OpenFaaS",
+        description: "AWS Lambda and OpenFaaS are two popular serverless platforms with different approaches. AWS Lambda is fully managed, while OpenFaaS provides more control but requires management.",
+        points: [
+          "AWS Lambda is fully managed; OpenFaaS requires setup",
+          "Lambda scales automatically; OpenFaaS needs configuration",
+          "Lambda has limited control; OpenFaaS offers flexibility",
+          "Lambda integrates deeply with AWS ecosystem",
+          "OpenFaaS avoids vendor lock-in",
+          "Lambda is easier to use; OpenFaaS is more customizable",
+          "Choice depends on use case and control requirements"
+        ],
+        important: true
+      },
+      {
+        id: "u5t10",
+        title: "Internet of Things (IoT)",
+        description: "The Internet of Things (IoT) refers to a network of interconnected physical devices that can collect, exchange, and process data over the internet. These devices include sensors, smart appliances, and industrial machines, enabling automation and intelligent decision-making.",
+        points: [
+          "IoT connects physical devices through the internet",
+          "Devices collect data using sensors and transmit it",
+          "Enables automation and remote monitoring",
+          "Used in smart homes, healthcare, and industries",
+          "Reduces human effort and improves efficiency",
+          "Generates large amounts of real-time data",
+          "Requires strong security to protect connected devices"
+        ],
+        important: true
+      },
+      {
+        id: "u5t11",
+        title: "IoT Components",
+        description: "IoT systems are made up of multiple components that work together to collect, process, and analyze data. Each component plays a crucial role in enabling communication and functionality.",
+        points: [
+          "Sensors collect data from the environment",
+          "Connectivity enables communication between devices",
+          "Cloud processes and stores large amounts of data",
+          "Data processing converts raw data into useful insights",
+          "User interface allows users to interact with the system",
+          "Actuators perform actions based on data",
+          "Security mechanisms protect data and devices"
+        ],
+        important: false
+      },
+      {
+        id: "u5t12",
+        title: "IoT Applications",
+        description: "IoT has a wide range of applications across different industries, improving efficiency, automation, and real-time decision-making capabilities.",
+        points: [
+          "Smart homes automate lighting, security, and appliances",
+          "Healthcare uses IoT for patient monitoring and diagnostics",
+          "Industrial IoT improves manufacturing processes",
+          "Smart cities manage traffic and energy efficiently",
+          "Agriculture uses IoT for smart irrigation systems",
+          "Retail uses IoT for inventory and supply chain management",
+          "Transportation uses IoT for tracking and fleet management"
+        ],
+        important: true
+      },
+      {
+        id: "u5t13",
+        title: "Cloud-centric IoT and Layers",
+        description: "Cloud-centric IoT architecture uses cloud computing to process and store data collected from IoT devices. It is structured into multiple layers that handle different functionalities.",
+        points: [
+          "Device layer collects data from sensors",
+          "Network layer transmits data to cloud systems",
+          "Cloud layer processes and stores data",
+          "Application layer provides services to users",
+          "Business layer handles analytics and decision-making",
+          "Cloud provides scalability for IoT systems",
+          "Supports large-scale IoT deployments"
+        ],
+        important: false
+      },
+      {
+        id: "u5t14",
+        title: "Edge Computing",
+        description: "Edge computing processes data closer to the source (devices) instead of sending it to centralized cloud servers. This reduces latency and improves real-time performance.",
+        points: [
+          "Processes data near the data source",
+          "Reduces latency for real-time applications",
+          "Minimizes bandwidth usage",
+          "Improves response time",
+          "Enhances reliability in remote areas",
+          "Supports IoT and real-time analytics",
+          "Requires additional edge devices"
+        ],
+        important: true
+      },
+      {
+        id: "u5t15",
+        title: "Edge Architecture",
+        description: "Edge architecture distributes computing resources across multiple edge devices to handle data processing locally. It reduces dependency on centralized cloud systems.",
+        points: [
+          "Uses edge devices like gateways and local servers",
+          "Processes data before sending to cloud",
+          "Improves system efficiency and speed",
+          "Reduces network congestion",
+          "Supports real-time decision-making",
+          "Works alongside cloud infrastructure",
+          "Enhances system resilience"
+        ],
+        important: false
+      },
+      {
+        id: "u5t16",
+        title: "Fog Computing",
+        description: "Fog computing extends cloud computing by providing intermediate processing between edge devices and the cloud. It brings computation closer to the network edge.",
+        points: [
+          "Acts as a middle layer between edge and cloud",
+          "Processes data locally before sending to cloud",
+          "Reduces latency and improves efficiency",
+          "Supports distributed computing environments",
+          "Handles real-time data processing",
+          "Improves scalability of IoT systems",
+          "Enhances data security"
+        ],
+        important: true
+      },
+      {
+        id: "u5t17",
+        title: "Edge vs Fog Computing",
+        description: "Edge and fog computing are both used to reduce latency and improve performance, but they differ in their architecture and processing approach.",
+        points: [
+          "Edge computing processes data directly on devices",
+          "Fog computing processes data on intermediate nodes",
+          "Edge is closer to data source than fog",
+          "Fog provides more distributed processing layers",
+          "Both reduce latency compared to cloud",
+          "Fog supports larger network structures",
+          "Edge is simpler but less scalable than fog"
+        ],
+        important: false
+      },
+      {
+        id: "u5t18",
+        title: "DevOps",
+        description: "DevOps is a software development approach that combines development and operations teams to improve collaboration, automation, and faster delivery of applications.",
+        points: [
+          "Combines development and operations workflows",
+          "Automates software building, testing, and deployment",
+          "Improves collaboration between teams",
+          "Enables continuous integration and delivery (CI/CD)",
+          "Reduces time to release applications",
+          "Enhances software quality and reliability",
+          "Uses tools like Jenkins, Docker, Kubernetes"
+        ],
+        important: true
+      },
+      {
+        id: "u5t19",
+        title: "Infrastructure as Code (IaC)",
+        description: "Infrastructure as Code (IaC) is the practice of managing and provisioning infrastructure using code instead of manual processes. It enables automation and consistency in cloud environments.",
+        points: [
+          "Defines infrastructure using code scripts",
+          "Automates provisioning of resources",
+          "Ensures consistency across environments",
+          "Reduces manual errors",
+          "Supports version control for infrastructure",
+          "Tools include Terraform, AWS CloudFormation",
+          "Improves scalability and deployment speed"
+        ],
+        important: false
+      },
+      {
+        id: "u5t20",
+        title: "Quantum Cloud Computing",
+        description: "Quantum cloud computing combines quantum computing with cloud technology, allowing users to access powerful quantum processors remotely through cloud platforms.",
+        points: [
+          "Uses quantum computers for complex computations",
+          "Accessible through cloud platforms",
+          "Solves problems beyond classical computing capability",
+          "Used in cryptography and optimization problems",
+          "Still in early stages of development",
+          "Requires specialized hardware and algorithms",
+          "Future of high-performance computing"
+        ],
+        important: true
+      }
     ]
   }
 };

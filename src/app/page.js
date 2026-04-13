@@ -4,8 +4,6 @@ import ResourceButton from "@/components/ResourceButton";
 
 export default function Home() {
   const units = [
-    { id: 1, title: "Foundations of Cloud", description: "Introduction to cloud computing, service models (IaaS, PaaS, SaaS), and deployment models." },
-    { id: 2, title: "Virtualization & Infrastructure", description: "Deep dive into hypervisors, containerization, and software-defined networking." },
     { id: 3, title: "Virtualization and Containers", description: "Deep dive into virtualized environments and container orchestration platforms." },
     { id: 4, title: "Cloud Computing Challenges", description: "Analyzing the economics, scalability, and security architecture of cloud systems." },
     { id: 5, title: "Advanced Concepts", description: "Exploring serverless patterns, IoT integration, and emerging cloud technologies." },
@@ -19,6 +17,7 @@ export default function Home() {
             href="/syllabus/cn.pdf" 
             icon="📘" 
             label="Full Syllabus" 
+            className="border-cyan-400/50 text-cyan-400 shadow-[0_0_20px_rgba(34,211,238,0.2)] hover:shadow-[0_0_25px_rgba(34,211,238,0.4)] border"
           />
         </div>
         
@@ -37,6 +36,7 @@ export default function Home() {
             href="/syllabus/cn.pdf" 
             icon="📘" 
             label="Full Syllabus" 
+            className="border-cyan-400/50 text-cyan-400 shadow-[0_0_20px_rgba(34,211,238,0.2)]"
           />
         </div>
       </div>
