@@ -31,11 +31,10 @@ export default function Home() {
           Academic Research Platform
         </h2>
         <h1 className="text-6xl md:text-8xl font-bold tracking-tighter text-white">
-          Cloud Computing <br /> Mastery
+          Cloud Computing
         </h1>
         <p className="max-w-2xl text-gray-400 text-lg md:text-xl font-medium leading-relaxed">
-          A minimalist curriculum for high-performance cloud architecture. 
-          Master the systems that power the modern web.
+          A minimalist modern web.
         </p>
 
         <div className="pt-8 flex flex-col items-center gap-4">
@@ -56,8 +55,8 @@ export default function Home() {
             <span className="text-sm font-bold text-white">{percentage}%</span>
           </div>
           <div className="h-2 w-full bg-white/5 rounded-full overflow-hidden mb-3">
-            <div 
-              className="h-full bg-white transition-all duration-1000 ease-out shadow-[0_0_15px_rgba(255,255,255,0.3)]" 
+            <div
+              className="h-full bg-white transition-all duration-1000 ease-out shadow-[0_0_15px_rgba(255,255,255,0.3)]"
               style={{ width: `${percentage}%` }}
             />
           </div>
